@@ -2,9 +2,10 @@
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/logo.PNG" width="600"/>
+ <p align="center">
+  <em>The easiest way to mocap your hands!</em>
+ </p>
 </p>
-
-The easiest way to mocap your hands!
 
 
 ## Background
