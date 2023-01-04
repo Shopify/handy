@@ -1,7 +1,7 @@
 # handy
 
 <p align="center">
- <img src="https://github.com/Shopify/handy/blob/main/readme_images/logo.png"/>
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/logo.PNG"/>
 </p>
 
 The easiest way to mocap your hands!
