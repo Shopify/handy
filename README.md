@@ -24,7 +24,15 @@ We developed this tool in order to streamline the process of capturing hand move
 
 1. First, build the `CaptureScene` and install it to the VR device
 2. Run the `CaptureScene` on the VR device
-3. Start and stop recording by pinching your left thumb and index fingers together and holding it until the red recording indicator appears or disappears
+3. Start and stop recording by pinching your left thumb and index finger together and holding the pinch until the red recording indicator appears or disappears at your left wrist
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/begin_and_end_recording.gif" width="600"/>
+ <p align="center">
+  <em>The red sphere at the left wrist indicates whether you are recording or not.</em>
+ </p>
+</p>
+
 4. Attach the VR device and download the `.jsonlines` files that were recorded
 5. Load `PlaybackScene` in the editor
 6. Click on `PlaybackManager` in the scene hierarchy and input the name of the `.jsonlines` file that you want to export to Blender
