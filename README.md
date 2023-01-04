@@ -57,8 +57,11 @@ We developed this tool in order to streamline the process of capturing hand move
 </p>
 
 7. Hit play in the editor and wait for the animation to complete.
-8. Load your exported `.abc` file in Blender!
+8. Load your exported `.abc` file in Blender. You will see the two hands and a cube that acts as a placeholder for the headset, which we also record!
 
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/hands_and_head.PNG" width="600"/>
+</p>
 
 ## Prerequisites
 * Unity 2022.1.23 or later
