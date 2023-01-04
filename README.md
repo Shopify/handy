@@ -38,16 +38,26 @@ We developed this tool in order to streamline the process of capturing hand move
  </p>
 </p>
 
-4. Connect the VR device to your computer and download the `.jsonlines` files that were recorded.
+4. Connect the VR device to your computer and download the `.jsonlines` files that were recorded. You can find them here:
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/jsonlines_folder.PNG" width="600"/>
+</p>
+
 5. Open the `PlaybackScene` in the Unity editor. You can find it here:
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/playback_scene.PNG" width="600"/>
 </p>
 
-6. Click on the `PlaybackManager` object in the scene hierarchy and input the name of the `.jsonlines` file that you want to export to Blender.
+6. Click on the `PlaybackManager` object in the scene hierarchy. In the `PlaybackManager` component of that object, input the path of the `.jsonlines` file that you want to export as an Alembic file. In the `AlembicExporter` component of the same object, specify the location where you want the Alembic file to be generated and its name.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/playback_steps.PNG" width="600"/>
+</p>
+
 7. Hit play in the editor and wait for the animation to complete.
-8. Load your exported .abc file in Blender!
+8. Load your exported `.abc` file in Blender!
 
 
 ## Prerequisites
