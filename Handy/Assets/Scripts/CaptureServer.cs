@@ -1,14 +1,16 @@
 using System.IO;
 using System.Text;
-using System.Linq;
+using System.Net;
 using System;
 using UnityEngine;
-using System.Net;
+using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 
 public class CaptureServer : MonoBehaviour
 {
     public string PortNumber = "7087";
+    public string IpPrefix = "192.168";
 
     private HttpListener m_Listener = null;
     private string m_RootPath = null;
@@ -37,7 +39,7 @@ public class CaptureServer : MonoBehaviour
 
     private void ContextCallback(IAsyncResult result)
     {
-        HttpListenerContext context = m_Listener.EndGetContext(result);
+        var context = m_Listener.EndGetContext(result);
         ProcessRequest(context);
         if (m_Listener != null && m_Listener.IsListening)
         {
@@ -48,7 +50,7 @@ public class CaptureServer : MonoBehaviour
     private void ProcessRequest(HttpListenerContext context)
     {
         Debug.Log("Receiving upload...");
-        string filename = Path.Join(m_RootPath, DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jsonlines");
+        var filename = Path.Join(m_RootPath, DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jsonlines");
         using (FileStream fs = new FileStream(filename, FileMode.Create))
         {
             context.Request.InputStream.CopyTo(fs);
@@ -65,18 +67,30 @@ public class CaptureServer : MonoBehaviour
 
     private string GetLocalAddress()
     {
-        string hostname = Dns.GetHostName();
-        //string hostname = "localhost";
-        var entry = Dns.GetHostEntry(hostname);
-        //var entry = Dns.Resolve(hostname);
-        var addressList = entry.AddressList;
-        Debug.Log("Addresses: " + String.Join(", ", addressList.Select(a => a.ToString())));
-        foreach (IPAddress ip in addressList)
+        var hostname = Dns.GetHostName();
+        var interfaces = NetworkInterface.GetAllNetworkInterfaces();
+        var addressList = new List<IPAddress>();
+        foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
         {
-            if (ip.AddressFamily == AddressFamily.InterNetwork)
+            foreach (var ip in ni.GetIPProperties().UnicastAddresses)
             {
-                return ip.ToString();
+                if (ip.Address.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    addressList.Add(ip.Address);
+                }
             }
+        }
+        foreach (IPAddress ipAddr in addressList)
+        {
+            var ip = ipAddr.ToString();
+            if (ip.StartsWith(IpPrefix))
+            {
+                return ip;
+            }
+        }
+        foreach (IPAddress ipAddr in addressList)
+        {
+            return ipAddr.ToString();
         }
         return null;
     }
