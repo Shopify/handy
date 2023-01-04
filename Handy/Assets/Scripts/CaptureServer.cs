@@ -1,27 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System;
 using System.Linq;
+using System;
 using UnityEngine;
-using Newtonsoft.Json;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading;
-#if UNITY_EDITOR
-using UnityEngine.Formats.Alembic.Exporter;
-#endif
 
 public class CaptureServer : MonoBehaviour
 {
+    public string PortNumber = "7087";
+
     private HttpListener m_Listener = null;
     private string m_RootPath = null;
 
     private void OnEnable()
     {
         m_RootPath = Application.temporaryCachePath;
-        StartServer();
+        Debug.Log("Starting server at http://" + GetLocalAddress() + ":" + PortNumber + "/ ...");
+        m_Listener = new HttpListener();
+        m_Listener.Prefixes.Add("http://*:" + PortNumber + "/");
+        m_Listener.Start();
+        var res = m_Listener.BeginGetContext(new AsyncCallback(ContextCallback), null);
+        Debug.Log("Started");
     }
 
     private void OnDisable()
@@ -33,16 +33,6 @@ public class CaptureServer : MonoBehaviour
             m_Listener.Close();
             m_Listener = null;
         }
-    }
-
-    private void StartServer()
-    {
-        Debug.Log("Starting...");
-        m_Listener = new HttpListener();
-        m_Listener.Prefixes.Add("http://*:7087/");
-        m_Listener.Start();
-        var res = m_Listener.BeginGetContext(new AsyncCallback(ContextCallback), null);
-        Debug.Log("Started");
     }
 
     private void ContextCallback(IAsyncResult result)
@@ -58,19 +48,36 @@ public class CaptureServer : MonoBehaviour
     private void ProcessRequest(HttpListenerContext context)
     {
         Debug.Log("Receiving upload...");
-        Debug.Log("A: " + DateTime.Now.ToString("yyyyMMddHHmmssffff"));
-        Debug.Log("B: " + m_RootPath);
         string filename = Path.Join(m_RootPath, DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jsonlines");
-        Debug.Log("Receiving upload to: " + filename);
         using (FileStream fs = new FileStream(filename, FileMode.Create))
         {
             context.Request.InputStream.CopyTo(fs);
             context.Response.StatusCode = 200;
             context.Response.ContentType = "text/html";
             using (StreamWriter writer = new StreamWriter(context.Response.OutputStream, Encoding.UTF8))
+            {
                 writer.WriteLine("Got it!");
+            }
             context.Response.Close();
         }
         Debug.Log("Received upload and saved to " + filename);
+    }
+
+    private string GetLocalAddress()
+    {
+        string hostname = Dns.GetHostName();
+        //string hostname = "localhost";
+        var entry = Dns.GetHostEntry(hostname);
+        //var entry = Dns.Resolve(hostname);
+        var addressList = entry.AddressList;
+        Debug.Log("Addresses: " + String.Join(", ", addressList.Select(a => a.ToString())));
+        foreach (IPAddress ip in addressList)
+        {
+            if (ip.AddressFamily == AddressFamily.InterNetwork)
+            {
+                return ip.ToString();
+            }
+        }
+        return null;
     }
 }
