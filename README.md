@@ -1,7 +1,7 @@
 # handy
 
 <p align="center">
- <img src="https://github.com/Shopify/handy/blob/main/readme_images/logo.PNG"/>
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/logo.PNG" width="600"/>
 </p>
 
 The easiest way to mocap your hands!
@@ -10,7 +10,7 @@ The easiest way to mocap your hands!
 ## Background
 
 <p align="center">
- <img src="https://github.com/Shopify/handy/blob/main/readme_images/animated_hands.gif"/>
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/animated_hands.gif" width="600"/>
  <p align="center">
   <em>No artists had to suffer to make this Blender animation. It was all mocapped using a Meta Quest Pro!</em>
  </p>
