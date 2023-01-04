@@ -9,7 +9,8 @@ public class TransformFrame
     public SerializableQuat rotation;
     public SerializableVec3 scale;
 
-    public static TransformFrame FromTransform(float timestamp, Transform t) {
+    public static TransformFrame FromTransform(float timestamp, Transform t)
+    {
         var ret = new TransformFrame();
         ret.timestamp = timestamp;
         ret.position = SerializableVec3.FromVector3(t.localPosition);
@@ -25,7 +26,8 @@ public class TransformFrame
         t.localScale = new Vector3(scale.x, scale.y, scale.z);
     }
 
-    public static TransformFrame FromFlattened(float[] f) {
+    public static TransformFrame FromFlattened(float[] f)
+    {
         var ret = new TransformFrame();
         ret.timestamp = f[0];
         ret.position = new SerializableVec3();

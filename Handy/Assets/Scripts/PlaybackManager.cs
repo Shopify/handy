@@ -41,11 +41,13 @@ public class PlaybackManager : MonoBehaviour
             Debug.Log("Could not load any frames for " + fpath);
             return;
         }
+
         var names = JsonConvert.DeserializeObject<string[]>(lines[0]);
         foreach (var captureName in names)
         {
             m_Frames.Add(captureName, new List<TransformFrame>());
         }
+
         for (var i = 1; i < lines.Length; ++i)
         {
             
@@ -55,6 +57,7 @@ public class PlaybackManager : MonoBehaviour
                 m_Frames[names[j]].Add(TransformFrame.FromFlattened(flattenedTransforms[j]));
             }
         }
+
         m_MaxFrame = m_Frames.Select(f => f.Value.Count).Max();
         Debug.Log("Max frame: " + m_MaxFrame);
     }
@@ -83,13 +86,17 @@ public class PlaybackManager : MonoBehaviour
         bool willAdvance = false;
         foreach (var capturer in m_Capturers)
         {
-            try {
+            try
+            {
                 var frame = m_Frames[capturer.captureName][m_Index];
-                if (m_Timestamp > frame.timestamp) {
+                if (m_Timestamp > frame.timestamp)
+                {
                     frame.CopyToTransform(capturer.transform);
                     willAdvance = true;
                 }
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Debug.Log("Could not get frame for " + capturer.captureName + ": " + e);
             }
         }

@@ -1,7 +1,8 @@
 using System;
 
 [Serializable]
-public class SerializableVec3 {
+public class SerializableVec3
+{
     public float x;
     public float y;
     public float z;

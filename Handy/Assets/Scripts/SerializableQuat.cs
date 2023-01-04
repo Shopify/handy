@@ -1,7 +1,8 @@
 using System;
 
 [Serializable]
-public class SerializableQuat {
+public class SerializableQuat
+{
     public float x;
     public float y;
     public float z;

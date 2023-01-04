@@ -35,6 +35,7 @@ public class CaptureManager : MonoBehaviour
         {
             obj.SetActive(!rec);
         }
+
         foreach (var obj in enabledOnRecording)
         {
             obj.SetActive(rec);
@@ -63,10 +64,12 @@ public class CaptureManager : MonoBehaviour
         if (recording && !m_WasRecording)
         {
             HandleStartRecording();
-        } else if (!recording && m_WasRecording)
+        }
+        else if (!recording && m_WasRecording)
         {
             HandleStopRecording();
         }
+
         m_WasRecording = recording;
     }
 
@@ -76,6 +79,7 @@ public class CaptureManager : MonoBehaviour
         {
             return;
         }
+
         var flattenedTransforms = m_Capturers.Select(c => TransformFrame.FromTransform(m_CurrentTimestamp, c.transform).Flattened());
         File.AppendAllLines(m_Filepath, new string[] { JsonConvert.SerializeObject(flattenedTransforms) });
         m_CurrentTimestamp += Time.deltaTime;
