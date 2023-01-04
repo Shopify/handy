@@ -6,11 +6,13 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using UnityEngine.Formats.Alembic.Exporter;
 
 public class CaptureServer : MonoBehaviour
 {
     public string PortNumber = "7087";
     public string IpPrefix = "192.168";
+    public PlaybackManager playbackManager;
 
     private HttpListener m_Listener = null;
     private string m_RootPath = null;
@@ -61,6 +63,7 @@ public class CaptureServer : MonoBehaviour
                 writer.WriteLine("Got it!");
             }
             context.Response.Close();
+            playbackManager?.ProcessPlayback(filename);
         }
         Debug.Log("Received upload and saved to " + filename);
     }

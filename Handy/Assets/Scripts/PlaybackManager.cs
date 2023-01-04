@@ -26,8 +26,26 @@ public class PlaybackManager : MonoBehaviour
     private GameObject m_Tmp;
     private bool m_PlaybackCompleted = false;
 
+    public void ProcessPlayback(string filepath)
+    {
+        this.filepath = filepath;
+    #if UNITY_EDITOR
+        alembicExporter.Recorder.Settings.OutputPath = Path.ChangeExtension(filepath, ".abc");
+    #endif
+        LoadFrames();
+        BeginPlayback();
+    }
+
     private string GetFilepath()
     {
+        if (string.IsNullOrEmpty(filepath))
+        {
+            throw new ArgumentException(".jsonlines filename cannot be empty");
+        }
+        if (File.Exists(filepath))
+        {
+            return filepath;
+        }
         return Path.Combine(Application.streamingAssetsPath, filepath);
     }
 
@@ -73,6 +91,7 @@ public class PlaybackManager : MonoBehaviour
         m_Timestamp = 0f;
         m_Index = 0;
         m_IsPlaying = true;
+        alembicExporter.BeginRecording();
     }
 
     private void UpdatePlaying()
