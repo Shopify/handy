@@ -52,11 +52,13 @@ public class CaptureManager : MonoBehaviour
         //File.AppendAllLines(m_Filepath, new string[] { JsonConvert.SerializeObject(capturerIndices) });
         var capturerNames = m_Capturers.Select(c => c.captureName);
         File.AppendAllLines(m_Filepath, new string[] { JsonConvert.SerializeObject(capturerNames) });
+        Debug.Log("Began recording");
     }
 
     private void HandleStopRecording()
     {
         ReconcileRecordingObjects(false);
+        Debug.Log("Finished recording. The .jsonlines file is located here: " + m_Filepath);
     }
 
     private void UpdateRecording()
