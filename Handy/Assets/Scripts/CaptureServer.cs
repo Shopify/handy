@@ -3,16 +3,12 @@ using System.Text;
 using System.Net;
 using System;
 using UnityEngine;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Net.Sockets;
-using UnityEngine.Formats.Alembic.Exporter;
 
 public class CaptureServer : MonoBehaviour
 {
-    public string PortNumber = "7087";
-    public string IpPrefix = "192.168";
+    
     public PlaybackManager playbackManager;
+    public AddressUtil addressUtil;
 
     private HttpListener m_Listener = null;
     private string m_RootPath = null;
@@ -20,9 +16,9 @@ public class CaptureServer : MonoBehaviour
     private void OnEnable()
     {
         m_RootPath = Application.temporaryCachePath;
-        Debug.Log("Starting server at http://" + GetLocalAddress() + ":" + PortNumber + "/ ...");
+        Debug.Log("Starting server at " + addressUtil.GetLocalHTTPAddress() + " ...");
         m_Listener = new HttpListener();
-        m_Listener.Prefixes.Add("http://*:" + PortNumber + "/");
+        m_Listener.Prefixes.Add("http://*:" + addressUtil.PortNumber + "/");
         m_Listener.Start();
         var res = m_Listener.BeginGetContext(new AsyncCallback(ContextCallback), null);
         Debug.Log("Started");
@@ -68,33 +64,5 @@ public class CaptureServer : MonoBehaviour
         Debug.Log("Received upload and saved to " + filename);
     }
 
-    private string GetLocalAddress()
-    {
-        var hostname = Dns.GetHostName();
-        var interfaces = NetworkInterface.GetAllNetworkInterfaces();
-        var addressList = new List<IPAddress>();
-        foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
-        {
-            foreach (var ip in ni.GetIPProperties().UnicastAddresses)
-            {
-                if (ip.Address.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    addressList.Add(ip.Address);
-                }
-            }
-        }
-        foreach (IPAddress ipAddr in addressList)
-        {
-            var ip = ipAddr.ToString();
-            if (ip.StartsWith(IpPrefix))
-            {
-                return ip;
-            }
-        }
-        foreach (IPAddress ipAddr in addressList)
-        {
-            return ipAddr.ToString();
-        }
-        return null;
-    }
+    
 }

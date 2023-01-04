@@ -1425,7 +1425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02f07feb94ba074fb6dd11e385d443f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filepath: C:\Users\DiegoMacarioBello\AppData\LocalLow\DefaultCompany\Handy\2023-01-04-19-49-31Z.jsonlines
+  filepath: 
   autoplay: 1
   alembicExporter: {fileID: 1194877432}
 --- !u!114 &1194877432
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_recorder:
     m_settings:
-      outputPath: C:\Users\DiegoMacarioBello\AppData\LocalLow\DefaultCompany\Handy\Output.abc
+      outputPath: 
       conf:
         timeSamplingType: 0
         frameRate: 60
@@ -1929,6 +1929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626315867}
   - component: {fileID: 1626315866}
+  - component: {fileID: 1626315868}
   m_Layer: 0
   m_Name: CaptureServer
   m_TagString: Untagged
@@ -1948,9 +1949,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc144ea991704852b73a52fd4565295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PortNumber: 7087
-  IpPrefix: 192.168
   playbackManager: {fileID: 1194877431}
+  addressUtil: {fileID: 1626315868}
 --- !u!4 &1626315867
 Transform:
   m_ObjectHideFlags: 0
@@ -1966,6 +1966,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1626315868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626315865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3962f911e2cd460e8d0841a155fd3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PortNumber: 7087
+  IpPrefix: 192.168
 --- !u!114 &1638513283
 MonoBehaviour:
   m_ObjectHideFlags: 0
