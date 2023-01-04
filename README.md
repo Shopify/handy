@@ -1,8 +1,20 @@
 # handy
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/logo.png"/>
+</p>
+
 The easiest way to mocap your hands!
 
 
 ## Background
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/animated_hands.gif"/>
+ <p align="center">
+  <em>No artists had to suffer to make this Blender animation. It was all mocapped using a Meta Quest Pro!</em>
+ </p>
+</p>
 
 We developed this tool in order to streamline the process of capturing hand movements from VR devices and bringing them into Blender for use in animations.
 
