@@ -1389,6 +1389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1194877430}
   - component: {fileID: 1194877431}
+  - component: {fileID: 1194877432}
   m_Layer: 0
   m_Name: PlaybackManager
   m_TagString: Untagged
@@ -1425,7 +1426,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filepath: C:\Users\DiegoMacarioBello\AppData\LocalLow\DefaultCompany\Handy\2023-01-04-19-49-31Z.jsonlines
   autoplay: 1
-  alembicExporter: {fileID: 0}
+  alembicExporter: {fileID: 1194877432}
+--- !u!114 &1194877432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194877429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210d8348e88bdfd499d152a7a14a9386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_recorder:
+    m_settings:
+      outputPath: C:\Users\DiegoMacarioBello\AppData\LocalLow\DefaultCompany\Handy\Output.abc
+      conf:
+        timeSamplingType: 0
+        frameRate: 60
+        xformType: 1
+        swapHandedness:
+          v: 1
+        swapFaces:
+          v: 0
+        scaleFactor: 1
+      scope: 0
+      targetBranch: {fileID: 0}
+      fixDeltaTime: 1
+      assumeNonSkinnedMeshesAreConstant: 1
+      captureMeshRenderer: 1
+      captureSkinnedMeshRenderer: 1
+      captureParticleSystem: 0
+      captureCamera: 1
+      meshNormals: 1
+      meshUV0: 1
+      meshUV1: 1
+      meshColors: 1
+      meshSubmeshes: 1
+      detailedLog: 0
+  m_captureOnStart: 1
+  m_ignoreFirstFrame: 1
+  m_maxCaptureFrame: 0
 --- !u!114 &1206167433
 MonoBehaviour:
   m_ObjectHideFlags: 0
