@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4815712199228594535}
   m_RootOrder: 1
@@ -74,6 +75,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4815712199228594535}
   m_RootOrder: 2
@@ -123,6 +125,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1289327820083540307}
   - {fileID: 4815712198111155534}
@@ -187,6 +190,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 4815712199228594535}
     m_Modifications:
     - target: {fileID: 58075687501077484, guid: 47e21ad323ffa484e9de5d3013133bf6,
@@ -250,13 +254,8 @@ PrefabInstance:
       value: HandSphereMap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 47e21ad323ffa484e9de5d3013133bf6, type: 3}
---- !u!4 &1289327820083540307 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 58075687501077484, guid: 47e21ad323ffa484e9de5d3013133bf6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1237029013936745151}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &983719076086685089 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2057036842789844766, guid: 47e21ad323ffa484e9de5d3013133bf6,
@@ -269,6 +268,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2fc1498442023409ccd04c3abff60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1289327820083540307 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 58075687501077484, guid: 47e21ad323ffa484e9de5d3013133bf6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1237029013936745151}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7026185951933532668 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8117960086461850435, guid: 47e21ad323ffa484e9de5d3013133bf6,
