@@ -23,7 +23,9 @@ We developed this tool in order to streamline the process of capturing hand move
 * Unity 2022.1.23 or later
 * Meta Quest (1, 2, or Pro)
 
-If you've never built and installed a Unity project on a Meta Quest headset, start by reading the [beginner's guide](https://github.com/Shopify/handy/blob/main/BEGINNER_GUIDE.md). It will walk you through everything you need to do!
+If you've never built and installed a Unity project on a Meta Quest headset, start by reading the [beginner's guide](https://github.com/Shopify/handy/blob/main/BEGINNERS_GUIDE.md). It will walk you through everything you need to do!
+
+We wrote it with the hope that people that don't have a technical background can run this project too.
 
 ## Optimized Workflow
 
