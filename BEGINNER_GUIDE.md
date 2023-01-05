@@ -143,7 +143,7 @@ Only select these modules and click the `Install` button.
 After cloning this repo, go to the `Projects` tab in the Unity Hub application, click on the arrow next to the `Open` button, and then click on the `Add project from disk` button.
 
 <p align="center">
- <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_projects.PNG" width="600"/>
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_projects.png" width="600"/>
 </p>
 
 At this point it's very important that you don't choose the root directory of your clone of this repo. Instead, choose the `Handy` folder that's in the root directory.
