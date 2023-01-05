@@ -60,7 +60,7 @@ Enable the `Developer Mode` checkbox.
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/developer_mode.png" width="600"/>
 </p>
 
-## Verifying That Developer Mode Is Enabled and Enabling Hand Tracking
+## Verifying That the Developer Mode Is Enabled and Enabling Hand Tracking
 
 Put your headset on and go to the `Settings` menu.
 
@@ -74,7 +74,7 @@ Select the `System` box.
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/system.jpg" width="600"/>
 </p>
 
-Look for the `Developer` menu. If it exists, then Developer Mode is enabled, which is what we wanted.
+Look for the `Developer` menu. If it exists, then the Developer Mode is enabled, which is what we wanted.
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/developer_mode_menu.jpg" width="600"/>
