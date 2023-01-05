@@ -1,5 +1,6 @@
 using System;
 
+// A serializable Quaternion
 [Serializable]
 public class SerializableQuat
 {

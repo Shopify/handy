@@ -1,5 +1,6 @@
 using System;
 
+// A serializable Vector3
 [Serializable]
 public class SerializableVec3
 {

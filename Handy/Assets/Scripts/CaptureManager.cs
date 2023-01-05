@@ -9,10 +9,13 @@ using UnityEngine;
 
 public class CaptureManager : MonoBehaviour
 {
+    // Boolean flag representing whether the manager is currently capturing a recording
     public bool recording = false;
+    // The primary VR button that should start/stop recording
     public OVRInput.Button activationButton = OVRInput.Button.PrimaryShoulder;
-    public GameObject[] disabledOnRecording;
+    // A list of GameObjects that should be enabled only when recording, and disabled otherwise
     public GameObject[] enabledOnRecording;
+    // An optional reference to `AddressUtil` so that we can easily send recordings back to the server
     public AddressUtil addressUtil = null;
 
     private float m_CurrentTimestamp = 0f;
@@ -20,47 +23,65 @@ public class CaptureManager : MonoBehaviour
     private CaptureTransform[] m_Capturers = new CaptureTransform[0];
     private string m_Filepath;
 
+    // Initialize by disabling all objects that should only be enabled during recording,
+    // and getting a list of all transforms we want to capture
     private void Start()
     {
-        ReconcileRecordingObjects(false);
+        ReconcileEnabledObjects(false);
         GatherCapturers();
     }
 
+    // Gathers a reference to all `CaptureTransform` instances we can find, which tracks
+    // objects we want to capture transform information about
     private void GatherCapturers()
     {
         m_Capturers = GameObject.FindObjectsOfType<CaptureTransform>();
     }
 
-    private void ReconcileRecordingObjects(bool rec)
+    // Disable or enable objects (like recording indicators) based on the given
+    // recording status
+    private void ReconcileEnabledObjects(bool rec)
     {
-        foreach (var obj in disabledOnRecording)
-        {
-            obj.SetActive(!rec);
-        }
-
         foreach (var obj in enabledOnRecording)
         {
             obj.SetActive(rec);
         }
     }
 
+    // Starts the recording process
     private void HandleStartRecording()
     {
+        // Recording starts at timestamp 0
         m_CurrentTimestamp = 0f;
+
+        // The filepath includes the current time
         m_Filepath = Path.Combine(Application.persistentDataPath, System.DateTime.UtcNow.ToString("u").Replace(" ", "-").Replace(":", "-") + ".jsonlines");
-        ReconcileRecordingObjects(true);
+
+        // Enable all objects that should only be enabled during recording
+        ReconcileEnabledObjects(true);
+
+        // Gather the capturers one more time (should not be needed, but maybe the list
+        // changed dynamically since `Start`)
         GatherCapturers();
-        //var capturerIndices = m_Capturers.Select((c, i) => new Tuple<string, int>(c.captureName, i)).ToDictionary(t => t.Item1, t => t.Item2);
-        //File.AppendAllLines(m_Filepath, new string[] { JsonConvert.SerializeObject(capturerIndices) });
+
+        // Our first line written to the file will be the names of all of the tracked objects
         var capturerNames = m_Capturers.Select(c => c.captureName);
         File.AppendAllLines(m_Filepath, new string[] { JsonConvert.SerializeObject(capturerNames) });
+
         Debug.Log("Began recording");
     }
 
+    // Stops the recording process
     private void HandleStopRecording()
     {
-        ReconcileRecordingObjects(false);
+        // Disable all objects that should only be enabled during recording
+        ReconcileEnabledObjects(false);
+
+        // Print the location of the finished recording (.jsonlines)
         Debug.Log("Finished recording. The .jsonlines file is located here: " + m_Filepath);
+
+        // If we have a reference to an `AddressUtil`, then use it to send the `.jsonlines` file
+        // back to the development server
         addressUtil?.LoadSavedLocalAddress((address) => {
             if (!string.IsNullOrEmpty(address))
             {
@@ -77,12 +98,17 @@ public class CaptureManager : MonoBehaviour
         });
     }
 
+    // Keeps track of recording and invokes logic when transitioning between recording states
     private void UpdateRecording()
     {
+        // Check if recording status has flipped from off to on, and if so, run the
+        // `HandleStartRecording` method to handle the transition
         if (recording && !m_WasRecording)
         {
             HandleStartRecording();
         }
+        // Check if recording status has flipped from on to off, and if so, run the
+        // `HandleStopRecording` method to handle the transition
         else if (!recording && m_WasRecording)
         {
             HandleStopRecording();
@@ -91,6 +117,7 @@ public class CaptureManager : MonoBehaviour
         m_WasRecording = recording;
     }
 
+    // When recording, captures transform information and appends it as a line to the `.jsonlines` file
     private void UpdateDoRecord()
     {
         if (!recording)
@@ -103,6 +130,7 @@ public class CaptureManager : MonoBehaviour
         m_CurrentTimestamp += Time.deltaTime;
     }
 
+    // Watches for VR button presses to toggle recording state
     private void UpdateButtonPress()
     {
         if (OVRInput.GetDown(activationButton) || Input.GetKey(KeyCode.JoystickButton6))

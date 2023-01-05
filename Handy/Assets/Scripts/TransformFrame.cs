@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+// A serializable "frame" that captures a Transform's state at a specific timestamp
+// and can be flattened into/from a simple float[11]
 [Serializable]
 public class TransformFrame
 {
