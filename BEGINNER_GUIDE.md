@@ -170,7 +170,7 @@ Within Unity, go to `Files -> Build Settings...`. Click on the Android icon and 
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/switch_platform.PNG" width="600"/>
 </p>
 
-Next, click on the `Refresh` button and look for your device in the `Run Device` drop-down list. After selecting it, click on the `Build And Run` button. You will be asked what you want to name the `.apk` file that will be created. Choose any name. Once the build completes, put on your headset. The Handy application should launch automatically, and your hands should be tracked successfully.
+Next, click on the `Refresh` button and look for your device in the `Run Device` drop-down list. After selecting it, click on the `Build And Run` button. You will be asked what you want to name the `.apk` file that will be created. Choose any name. Once the build completes, put on your headset. The Handy app should launch automatically, and your hands should be tracked successfully.
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/build_and_run.png" width="600"/>
