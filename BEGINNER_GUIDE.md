@@ -2,7 +2,6 @@
 
 So you own a Meta Quest (1, 2, or Pro) and you've never built and installed a Unity project on it? If yes, then follow the steps below!
 
-
 ## Verifying Your Oculus Developer Account and Creating an Organization
 
 The first thing you need to do is verify your Oculus Developer Account. To do that, go to [this](https://developer.oculus.com/) website and log in with your Meta Account.
@@ -30,7 +29,6 @@ Enter any name you want, agree to the terms of service and press the Submit butt
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/organization.png" width="600"/>
 </p>
-
 
 ## Enabling the Developer Mode on Your Headset
 
@@ -91,3 +89,23 @@ Enable the `Hand Tracking` checkbox.
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/hand_tracking_menu.jpg" width="600"/>
 </p>
+
+## Installing the Oculus App on Your PC
+
+Go to [this](https://www.meta.com/ca/quest/setup/?utm_source=www.meta.com&utm_medium=dollyredirect) website, download the Oculus App and install it.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/oculus_app.PNG" width="600"/>
+</p>
+
+Launch the Oculus App, go to the `Devices` tab and click on the `Add Headset` button.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/add_headset.PNG" width="600"/>
+</p>
+
+Follow the steps until your headset has been added.
+
+## Installing the Meta Quest Developer Hub (MDQH) on Your PC
+
+Go to [this](https://developer.oculus.com/documentation/unity/ts-odh/) website and follow the steps in the `Install MQDH` and `Connect Headset to MQDH` sections.
