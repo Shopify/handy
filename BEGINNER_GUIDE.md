@@ -106,6 +106,34 @@ Launch the Oculus App, go to the `Devices` tab and click on the `Add Headset` bu
 
 Follow the steps until your headset has been added.
 
-## Installing the Meta Quest Developer Hub (MDQH) on Your PC
+## Installing the Meta Quest Developer Hub (MQDH) on Your PC
 
 Go to [this](https://developer.oculus.com/documentation/unity/ts-odh/) website and follow the steps in the `Install MQDH` and `Connect Headset to MQDH` sections.
+
+## Installing Unity 2022.1.23f1
+
+Download the Unity Hub application from [this](https://unity.com/download) website if you don't have it installed already.
+
+Launch it, go to the `Installs` tab and click the `Install Editor` button.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_installs.PNG" width="600"/>
+</p>
+
+Click on the `Archive` tab and then on the `download archive` link.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_archive.PNG" width="600"/>
+</p>
+
+Look for the correct version of Unity and click on the `Unity Hub` button.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_archive_website.PNG" width="600"/>
+</p>
+
+Only select these modules and click the `Install` button.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_modules.PNG" width="600"/>
+</p>
