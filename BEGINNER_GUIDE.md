@@ -137,3 +137,23 @@ Only select these modules and click the `Install` button.
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_modules.PNG" width="600"/>
 </p>
+
+## Opening the Unity Project and Verifying That It Can Be Built and Installed on Your Headset
+
+After cloning this repo, go to the `Projects` tab in the Unity Hub application, click on the arrow next to the `Open` button, and then click on the `Add project from disk` button.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_projects.PNG" width="600"/>
+</p>
+
+At this point it's very important that you don't choose the root directory of your clone of this repo. Instead, choose the `Handy` folder that's in the root directory.
+
+For example, if you cloned this repo here: `C:\Users\JaneDoe\Desktop\handy`
+
+Then select this folder: `C:\Users\JaneDoe\Desktop\handy\Handy`
+
+You can now click on the project to open it:
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_open_project.PNG" width="600"/>
+</p>
