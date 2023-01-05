@@ -7,7 +7,6 @@
  </p>
 </p>
 
-
 ## Background
 
 <p align="center">
@@ -17,12 +16,18 @@
  </p>
 </p>
 
-We developed this tool in order to streamline the process of capturing hand movements from VR devices and bringing them into Blender for use in animations.
+We developed this tool in order to streamline the process of capturing hand movements from Meta Quest headsets and bringing them into Blender for use in animations.
 
+## Prerequisites
+
+* Unity 2022.1.23 or later
+* Meta Quest (1, 2, or Pro)
+
+If you've never built and installed a Unity project on a Meta Quest headset, start by reading the [beginner's guide](https://github.com/Shopify/handy/blob/main/BEGINNER_GUIDE.md). It will walk you through everything you need to do!
 
 ## Optimized Workflow
 
-1. First, build `ClientScene` and install it to the VR device. You can find it here:
+1. First, build `ClientScene` and install it to the headset. You can find it here:
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/client_scene.png" width="600"/>
@@ -40,7 +45,7 @@ Play in the editor looks like this:
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/editor_play_button.png" width="600"/>
 </p>
 
-3. Run the `Handy` app on the VR device.
+3. Run the `Handy` app on the headset.
 
 4. Start and stop recording by pinching your left thumb and index finger together and holding the pinch until the red recording indicator appears or disappears at your left wrist.
 
@@ -63,15 +68,15 @@ Play in the editor looks like this:
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/hands_and_head.PNG" width="600"/>
 </p>
 
-## Workflow
+## Manual Workflow
 
-1. First, build the `CaptureScene` and install it to the VR device. You can find it here:
+1. First, build the `CaptureScene` and install it to the headset. You can find it here:
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/capture_scene.PNG" width="600"/>
 </p>
 
-2. Run the `Handy` app on the VR device.
+2. Run the `Handy` app on the headset.
 3. Start and stop recording by pinching your left thumb and index finger together and holding the pinch until the red recording indicator appears or disappears at your left wrist.
 
 <p align="center">
@@ -81,7 +86,7 @@ Play in the editor looks like this:
  </p>
 </p>
 
-4. Connect the VR device to your computer and download the `.jsonlines` files that were recorded. You can find them here:
+4. Connect the headset to your computer and download the `.jsonlines` files that were recorded. You can find them here:
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/jsonlines_folder.PNG" width="600"/>
@@ -105,11 +110,6 @@ Play in the editor looks like this:
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/hands_and_head.PNG" width="600"/>
 </p>
-
-## Prerequisites
-* Unity 2022.1.23 or later
-* Meta Quest (1, 2, or Pro)
-
 
 ## License
 
