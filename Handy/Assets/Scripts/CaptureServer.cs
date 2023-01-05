@@ -2,6 +2,7 @@ using System.IO;
 using System.Text;
 using System.Net;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CaptureServer : MonoBehaviour
@@ -13,6 +14,7 @@ public class CaptureServer : MonoBehaviour
     private HttpListener m_Listener = null;
     private string m_RootPath = null;
     private string m_ProcessPlaybackFilename = null;
+    private List<string> m_ProcessPlaybackFilenames = new List<string>();
 
     private void OnEnable()
     {
@@ -49,7 +51,6 @@ public class CaptureServer : MonoBehaviour
 
     private void ProcessRequest(HttpListenerContext context)
     {
-        Debug.Log("Receiving upload...");
         var filename = Path.Join(m_RootPath, DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jsonlines");
         Debug.Log("Receiving upload to " + filename + "...");
         using (FileStream fs = new FileStream(filename, FileMode.Create))
@@ -67,14 +68,31 @@ public class CaptureServer : MonoBehaviour
         Debug.Log("Received upload and saved to " + filename);
     }
 
-    private void Update()
+    private void UpdateProcessPlaybackList()
     {
         var tmp = m_ProcessPlaybackFilename;
         if (tmp != null)
         {
             m_ProcessPlaybackFilename = null;
-            Debug.Log("About to process playback");
-            playbackManager?.ProcessPlayback(tmp);
+            m_ProcessPlaybackFilenames.Add(tmp);
         }
+    }
+
+    private void UpdateProcessPlayback()
+    {
+        var pbm = playbackManager;
+        if (pbm == null || pbm?.IsPlaying() == true || m_ProcessPlaybackFilenames.Count == 0)
+        {
+            return;
+        }
+        var tmp = m_ProcessPlaybackFilenames[0];
+        m_ProcessPlaybackFilenames.RemoveAt(0);
+        playbackManager?.ProcessPlayback(tmp);
+    }
+
+    private void Update()
+    {
+        UpdateProcessPlaybackList();
+        UpdateProcessPlayback();
     }
 }

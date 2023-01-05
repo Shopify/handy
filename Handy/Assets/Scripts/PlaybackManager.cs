@@ -26,6 +26,11 @@ public class PlaybackManager : MonoBehaviour
     private GameObject m_Tmp;
     private bool m_PlaybackCompleted = false;
 
+    public bool IsPlaying()
+    {
+        return m_IsPlaying;
+    }
+
     public void ProcessPlayback(string filepath)
     {
         this.filepath = filepath;
