@@ -1,4 +1,4 @@
-# Beginner Guide
+# Beginner's Guide
 
 So you own a Meta Quest (1, 2, or Pro) and you've never built and installed a Unity project on it? If yes, then follow the steps below!
 
