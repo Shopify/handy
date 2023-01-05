@@ -91,7 +91,9 @@ public class PlaybackManager : MonoBehaviour
         m_Timestamp = 0f;
         m_Index = 0;
         m_IsPlaying = true;
+    #if UNITY_EDITOR
         alembicExporter.BeginRecording();
+    #endif
     }
 
     private void UpdatePlaying()
@@ -150,9 +152,9 @@ public class PlaybackManager : MonoBehaviour
     {
         m_Tmp = new GameObject();
         m_Tmp.SetActive(false);
-        LoadFrames();
         if (autoplay)
         {
+            LoadFrames();
             BeginPlayback();
         }
     }

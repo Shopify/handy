@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   filepath: 
-  autoplay: 1
+  autoplay: 0
   alembicExporter: {fileID: 1194877432}
 --- !u!114 &1194877432
 MonoBehaviour:
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_recorder:
     m_settings:
-      outputPath: 
+      outputPath: Output/PlaybackManager.abc
       conf:
         timeSamplingType: 0
         frameRate: 60

@@ -2,10 +2,12 @@ using System.IO;
 using System.Text;
 using System.Net;
 using System;
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using UnityEngine.Networking;
 #if UNITY_EDITOR
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
@@ -16,7 +18,7 @@ public class AddressUtil : MonoBehaviour
 , IPreprocessBuildWithReport
 #endif
 {
-    public static AddressUtil Instance = null;
+    //public static AddressUtil Instance = null;
 
     public string PortNumber = "7087";
     public string IpPrefix = "192.168";
@@ -27,7 +29,7 @@ public class AddressUtil : MonoBehaviour
     {
         m_StreamingPath = Application.streamingAssetsPath;
         SaveLocalAddress();
-        Instance = this;
+        //Instance = this;
     }
 
     public string GetLocalAddress()
@@ -75,9 +77,35 @@ public class AddressUtil : MonoBehaviour
         File.WriteAllText(GetStreamingAssetAddressPath(), GetLocalHTTPAddress());
     }
 
-    public string ReadSavedLocalAddress()
+    public void LoadSavedLocalAddress(Action<string> OnLoad, Action<UnityWebRequest.Result> OnError)
     {
-        return File.ReadAllText(GetStreamingAssetAddressPath());
+#if UNITY_ANDROID
+        StartCoroutine(_LoadSavedLocalAddress(OnLoad, OnError));
+#else
+        OnLoad(File.ReadAllText(GetStreamingAssetAddressPath()));
+#endif
+    }
+
+    private IEnumerator _LoadSavedLocalAddress(Action<string> OnLoad, Action<UnityWebRequest.Result> OnError)
+    {
+        using (UnityWebRequest req = UnityWebRequest.Get(GetStreamingAssetAddressPath()))
+        {
+            yield return req.SendWebRequest();
+            switch (req.result)
+            {
+                case UnityWebRequest.Result.ConnectionError:
+                case UnityWebRequest.Result.DataProcessingError:
+                    OnError?.Invoke(req.result);
+                    break;
+                case UnityWebRequest.Result.ProtocolError:
+                    OnError?.Invoke(req.result);
+                    break;
+                case UnityWebRequest.Result.Success:
+                    OnLoad?.Invoke(req.downloadHandler.text);
+                    break;
+            }
+        }
+        yield break;
     }
 
 #if UNITY_EDITOR

@@ -20,6 +20,49 @@
 We developed this tool in order to streamline the process of capturing hand movements from VR devices and bringing them into Blender for use in animations.
 
 
+## Optimized Workflow
+
+1. First, build `ClientScene` and install it to the VR device. You can find it here:
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/client_scene.png" width="600"/>
+</p>
+
+2. Now, switch over to `ServerScene` - double-click it to open it, then hit play in the editor. You can find the scene here:
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/server_scene.png" width="600"/>
+</p>
+
+Play in the editor looks like this:
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/editor_play_button.png" width="600"/>
+</p>
+
+3. Run the `Handy` app on the VR device.
+
+4. Start and stop recording by pinching your left thumb and index finger together and holding the pinch until the red recording indicator appears or disappears at your left wrist.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/begin_and_end_recording.gif" width="600"/>
+ <p align="center">
+  <em>The red sphere at the left wrist indicates whether you are recording or not.</em>
+ </p>
+</p>
+
+5. Watch the editor and wait for the animation to complete and output a finished `.abc` filename.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/final_abc.png" width="848"/>
+</p>
+
+6. Load your exported `.abc` files in Blender. You will see the two hands and a cube that acts as a placeholder for the headset, which we also record!
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/hands_and_head.PNG" width="600"/>
+</p>
+
 ## Workflow
 
 1. First, build the `CaptureScene` and install it to the VR device. You can find it here:

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class CaptureManager : MonoBehaviour
     public OVRInput.Button activationButton = OVRInput.Button.PrimaryShoulder;
     public GameObject[] disabledOnRecording;
     public GameObject[] enabledOnRecording;
+    public AddressUtil addressUtil = null;
 
     private float m_CurrentTimestamp = 0f;
     private bool m_WasRecording = false;
@@ -59,6 +61,20 @@ public class CaptureManager : MonoBehaviour
     {
         ReconcileRecordingObjects(false);
         Debug.Log("Finished recording. The .jsonlines file is located here: " + m_Filepath);
+        addressUtil?.LoadSavedLocalAddress((address) => {
+            if (!string.IsNullOrEmpty(address))
+            {
+                Debug.Log("Uploading to " + address);
+                using(var ws = (new WebClient()).OpenWrite(address))
+                using(var rs = File.OpenRead(m_Filepath))
+                {
+                    rs.CopyTo(ws);
+                }
+                Debug.Log("Finished uploaading to " + address);
+            }
+        }, (error) => {
+            Debug.Log("Got error getting saved local address: " + error.ToString());
+        });
     }
 
     private void UpdateRecording()

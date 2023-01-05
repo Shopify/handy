@@ -12,9 +12,11 @@ public class CaptureServer : MonoBehaviour
 
     private HttpListener m_Listener = null;
     private string m_RootPath = null;
+    private string m_ProcessPlaybackFilename = null;
 
     private void OnEnable()
     {
+        m_ProcessPlaybackFilename = null;
         m_RootPath = Application.temporaryCachePath;
         Debug.Log("Starting server at " + addressUtil.GetLocalHTTPAddress() + " ...");
         m_Listener = new HttpListener();
@@ -49,6 +51,7 @@ public class CaptureServer : MonoBehaviour
     {
         Debug.Log("Receiving upload...");
         var filename = Path.Join(m_RootPath, DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jsonlines");
+        Debug.Log("Receiving upload to " + filename + "...");
         using (FileStream fs = new FileStream(filename, FileMode.Create))
         {
             context.Request.InputStream.CopyTo(fs);
@@ -59,10 +62,19 @@ public class CaptureServer : MonoBehaviour
                 writer.WriteLine("Got it!");
             }
             context.Response.Close();
-            playbackManager?.ProcessPlayback(filename);
+            m_ProcessPlaybackFilename = filename;
         }
         Debug.Log("Received upload and saved to " + filename);
     }
 
-    
+    private void Update()
+    {
+        var tmp = m_ProcessPlaybackFilename;
+        if (tmp != null)
+        {
+            m_ProcessPlaybackFilename = null;
+            Debug.Log("About to process playback");
+            playbackManager?.ProcessPlayback(tmp);
+        }
+    }
 }
