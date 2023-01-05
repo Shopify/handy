@@ -158,7 +158,7 @@ You can now click on the project to open it:
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_open_project.PNG" width="600"/>
 </p>
 
-Next, plug your headset to your PC. Make sure to allow file access when prompted.
+Next, plug your headset to your PC. Make sure to allow file access within the headset when prompted.
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/access_files.jpg" width="600"/>
