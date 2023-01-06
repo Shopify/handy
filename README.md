@@ -25,11 +25,11 @@ We developed this tool in order to streamline the process of capturing hand move
 
 If you've never built and installed a Unity project on a Meta Quest headset, start by reading the [beginner's guide](https://github.com/Shopify/handy/blob/main/BEGINNERS_GUIDE.md). It will walk you through everything you need to do!
 
-We wrote it with the hope that people that don't have a technical background can run this project too.
+We wrote it so that people that don't have a technical background can run this project too.
 
 ## Workflows
 
-We developed two workflows for this project. The `Optimized Workflow` is the fastest. It requires an internet connection so that the `Handy` app can send mocap recordings from the headset to the Unity editor to automatically generate Alembic files. The `Manual Workflow` is slow, but it doesn't require an internet connection. 
+We developed two workflows for this project. The `Optimized Workflow` is fast, but it requires an internet connection so that the `Handy` app can send mocap recordings from the headset to the Unity editor to automatically generate Alembic files. The `Manual Workflow` is slow, but it doesn't require an internet connection. 
 
 ### Optimized Workflow
 
@@ -71,7 +71,9 @@ Play in the editor looks like this:
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/final_abc.png" width="848"/>
 </p>
 
-6. Load your exported `.abc` files in Blender. You will see the two hands and a cube that acts as a placeholder for the headset, which we also record!
+6. If you start and stop recording multiple times in a row, a queue will form in the server, so you will have to wait for it to process all your recordings.
+
+7. Load your exported `.abc` files in Blender. You will see two hands and a cube that acts as a placeholder for the headset, which we also record!
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/hands_and_head.PNG" width="600"/>
@@ -118,7 +120,7 @@ Play in the editor looks like this:
 </p>
 
 7. Hit play in the editor and wait for the animation to complete.
-8. Load your exported `.abc` file in Blender. You will see the two hands and a cube that acts as a placeholder for the headset, which we also record!
+8. Load your exported `.abc` file in Blender. You will see two hands and a cube that acts as a placeholder for the headset, which we also record!
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/hands_and_head.PNG" width="600"/>
