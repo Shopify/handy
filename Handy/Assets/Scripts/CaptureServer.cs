@@ -11,11 +11,10 @@ public class CaptureServer : MonoBehaviour
     public PlaybackManager playbackManager;
     // Reference to an `AddressUtil` so we know what hostname and port to serve on
     public AddressUtil addressUtil;
-
+    // The root path where we'll save uploaded files - defaults to `data_output` in the project directory
+    public string rootPath;
     // `HttpListener` controls the HTTP server socket and accepting incoming connections
     private HttpListener m_Listener = null;
-    // The root path where we'll save uploaded files
-    private string m_RootPath = null;
     // A temporary holding variable for passing strings from HTTP listener threads to Unity's game thread
     private string m_ProcessPlaybackFilename = null;
     // A list of `.jsonlines` files to process when the `PlaybackManager` is ready
@@ -26,8 +25,17 @@ public class CaptureServer : MonoBehaviour
     {
         // Reset paths and all in-flight data
         m_ProcessPlaybackFilename = null;
-        m_RootPath = Application.temporaryCachePath;
         m_ProcessPlaybackFilenames = new List<string>();
+
+        // Set the default root path and create the directory if it doesn't exist
+        if (string.IsNullOrEmpty(rootPath))
+        {
+            rootPath = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "..", "data_output"));
+        }
+        if (!Directory.Exists(rootPath))
+        {
+            Directory.CreateDirectory(rootPath);
+        }
 
         // Start a new server listening
         Debug.Log("Starting server at " + addressUtil.GetLocalHTTPAddress() + " ...");
@@ -68,7 +76,7 @@ public class CaptureServer : MonoBehaviour
     private void ProcessRequest(HttpListenerContext context)
     {
         // Choose a filename to stream the request body to
-        var filename = Path.Join(m_RootPath, DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jsonlines");
+        var filename = Path.Join(rootPath, DateTime.Now.ToString("yyyyMMddHHmmssffff") + ".jsonlines");
         Debug.Log("Receiving upload to " + filename + "...");
 
         using (FileStream fs = new FileStream(filename, FileMode.Create))

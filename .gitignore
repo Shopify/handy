@@ -2,3 +2,5 @@
 Handy/Output
 Handy/.vscode
 
+# Everything in the data_output directory
+data_output/*
