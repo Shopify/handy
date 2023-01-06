@@ -175,3 +175,17 @@ Next, click on the `Refresh` button and look for your device in the `Run Device`
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/build_and_run.png" width="600"/>
 </p>
+
+At this point you are ready to go back to the [Optimized Workflow](https://github.com/Shopify/handy#optimized-workflow) section of the readme, but remember to quit the Handy app first since you will need to run the server before launching it again.
+
+The next time you want to launch it, go to the `Unknown Sources` category within your headset:
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/unknown_sources.jpg" width="600"/>
+</p>
+
+You will find the app there:
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/launching_handy.jpg" width="600"/>
+</p>
