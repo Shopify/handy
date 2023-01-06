@@ -12,7 +12,7 @@ Thank you for contributing to handy :tada: Any contributions to handy are apprec
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the [Code of Conduct document](https://github.com/Shopify/handy/blob/main/CODE_OF_CONDUCT.md).
-By participating, you are expected to uphold this code. Please report unacceptable behaviour to eric.florenzano@shopify.com or diego.macario.bello@shopify.com.
+By participating, you are expected to uphold this code. Please report unacceptable behaviour to opensource@shopify.com.
 
 ## How to contribute
 
