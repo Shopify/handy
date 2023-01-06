@@ -65,10 +65,16 @@ Play in the editor looks like this:
  </p>
 </p>
 
-5. Every time you stop recording, the client (the `Handy` app) will send a `.jsonlines` file to the server (the Unity editor). The server will then immediately start playing back the recording (you will see your hands moving around in Unity's viewport). Once it finishes playing the recording (you will see your hands freeze in Unity's viewport), it will output a finished `.abc` filename in Unity's console.
+5. Every time you stop recording, the client (the `Handy` app) will send a `.jsonlines` file to the server (the Unity editor). The server will then immediately start playing back the recording (you will see your hands moving in Unity's viewport). Once it finishes playing the recording (you will see your hands freeze in Unity's viewport), it will output a finished `.abc` filename in Unity's console.
 
 <p align="center">
- <img src="https://github.com/Shopify/handy/blob/main/readme_images/final_abc.png" width="848"/>
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/final_abc.png" width="600"/>
+</p>
+
+Note that on Windows, the `.abc` files will be placed in a subdirectory of the `AppData` folder, which is a hidden folder. To see hidden folders, check this box in a File Explorer window:
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/hidden_folder.png" width="600"/>
 </p>
 
 6. If you start and stop recording multiple times in a row, a queue will form in the server, so you will have to wait for it to process all your recordings.
