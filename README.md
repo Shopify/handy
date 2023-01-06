@@ -43,6 +43,8 @@ We developed two workflows for this project. The `Optimized Workflow` is fast, b
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/client_scene.png" width="600"/>
 </p>
 
+To build and install it you can simply go to `File -> Build And Run`.
+
 2. Now, switch over to the `ServerScene` - double-click it to open it, then hit play in the editor. You can find the scene here:
 
 <p align="center">
@@ -122,7 +124,7 @@ After that simply click the `Add Open Scenes` button and the `CaptureScene` shou
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/jsonlines_folder.PNG" width="600"/>
 </p>
 
-5. Open the `PlaybackScene` in the Unity editor. You can find it here:
+5. Open the `PlaybackScene` in the Unity editor by double-clicking it. You can find it here:
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/playback_scene.PNG" width="600"/>
@@ -134,7 +136,12 @@ After that simply click the `Add Open Scenes` button and the `CaptureScene` shou
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/playback_steps.PNG" width="600"/>
 </p>
 
-7. Hit play in the editor and wait for the animation to complete.
+7. Hit play in the editor and wait for the animation to complete. Play in the editor looks like this:
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/editor_play_button.png" width="600"/>
+</p>
+
 8. Load your exported `.abc` file in Blender. You will see two hands and a cube that acts as a placeholder for the headset, which we also record!
 
 <p align="center">
