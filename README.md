@@ -27,15 +27,22 @@ If you've never built and installed a Unity project on a Meta Quest headset, sta
 
 We wrote it with the hope that people that don't have a technical background can run this project too.
 
-## Optimized Workflow
+## Workflows
 
-1. First, build `ClientScene` and install it to the headset. You can find it here:
+We developed two workflows for this project. The `Optimized Workflow` is the fastest. It requires an internet connection so that the `Handy` app can send mocap recordings from the headset to the Unity editor to automatically generate Alembic files. The `Manual Workflow` is slow, but it doesn't require an internet connection. 
+
+### Optimized Workflow
+
+<details>
+  <summary>Click to expand</summary>
+
+1. First, build the `ClientScene` and install it to the headset. You can find it here:
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/client_scene.png" width="600"/>
 </p>
 
-2. Now, switch over to `ServerScene` - double-click it to open it, then hit play in the editor. You can find the scene here:
+2. Now, switch over to the `ServerScene` - double-click it to open it, then hit play in the editor. You can find the scene here:
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/server_scene.png" width="600"/>
@@ -58,7 +65,7 @@ Play in the editor looks like this:
  </p>
 </p>
 
-5. Watch the editor and wait for the animation to complete and output a finished `.abc` filename.
+5. Every time you stop recording, the client (the `Handy` app) will send a `.jsonlines` file to the server (the Unity editor). The server will then immediately start playing back the recording (you will see your hands moving around in Unity's viewport). Once it finishes playing the recording (you will see your hands freeze in Unity's viewport), it will output a finished `.abc` filename in Unity's console.
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/final_abc.png" width="848"/>
@@ -69,8 +76,12 @@ Play in the editor looks like this:
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/hands_and_head.PNG" width="600"/>
 </p>
+</details>
 
-## Manual Workflow
+### Manual Workflow
+
+<details>
+  <summary>Click to expand</summary>
 
 1. First, build the `CaptureScene` and install it to the headset. You can find it here:
 
@@ -112,6 +123,7 @@ Play in the editor looks like this:
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/hands_and_head.PNG" width="600"/>
 </p>
+</details>
 
 ## License
 
