@@ -94,6 +94,18 @@ The `.abc` files will always be placed in a folder called `data_output` which is
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/capture_scene.PNG" width="600"/>
 </p>
 
+Double-click it to open it, and then go to `File -> Build Settings...`, select any scenes that are in the `Scenes In Build` box, right click them and select `Remove Selection`.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/remove_selection.png" width="600"/>
+</p>
+
+After that simply click the `Add Open Scenes` button and the `CaptureScene` should be added to the list. You are now ready to press the `Build And Run` button.
+
+<p align="center">
+ <img src="https://github.com/Shopify/handy/blob/main/readme_images/add_open_scenes.png" width="600"/>
+</p>
+
 2. Run the `Handy` app on the headset.
 3. Start and stop recording by pinching your left thumb and index finger together and holding the pinch until the red recording indicator appears or disappears at your left wrist.
 
