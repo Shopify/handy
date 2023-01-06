@@ -102,7 +102,7 @@ Enable the `Hand Tracking` checkbox.
 </p>
 </details>
 
-## Installing the Oculus App on Your PC
+## Installing the Oculus App on Your Computer
 
 <details>
   <summary>Click to expand</summary>
@@ -122,7 +122,7 @@ Launch the Oculus App, go to the `Devices` tab and click on the `Add Headset` bu
 Follow the steps until your headset has been added.
 </details>
 
-## Installing the Meta Quest Developer Hub (MQDH) on Your PC
+## Installing the Meta Quest Developer Hub (MQDH) on Your Computer
 
 <details>
   <summary>Click to expand</summary>
@@ -185,7 +185,7 @@ You can now click on the project to open it:
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_open_project.PNG" width="600"/>
 </p>
 
-Next, plug your headset to your PC. Make sure to allow file access within the headset when prompted.
+Next, plug your headset to your computer. Make sure to allow file access within the headset when prompted.
 
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/access_files.jpg" width="600"/>
