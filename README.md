@@ -72,7 +72,7 @@ Play in the editor looks like this:
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/final_abc.png" width="600"/>
 </p>
 
-The `.abc` files will be placed in a folder called `data_output` which is located at the root of your clone of this repository.
+The `.abc` files will always be placed in a folder called `data_output` which is located at the root of your clone of this repository.
 
 6. If you start and stop recording multiple times in a row, a queue will form in the server, so you will have to wait for it to process all your recordings.
 
