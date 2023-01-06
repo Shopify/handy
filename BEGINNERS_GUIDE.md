@@ -4,6 +4,9 @@ So you own a Meta Quest (1, 2, or Pro) and you've never built and installed a Un
 
 ## Verifying Your Oculus Developer Account and Creating an Organization
 
+<details>
+  <summary>Click to expand</summary>
+
 The first thing you need to do is verify your Oculus Developer Account. To do that, go to [this](https://developer.oculus.com/) website and log in with your Meta Account.
 
 <p align="center">
@@ -29,8 +32,12 @@ Enter any name you want, agree to the terms of service and press the Submit butt
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/organization.png" width="600"/>
 </p>
+</details>
 
 ## Enabling the Developer Mode on Your Headset
+
+<details>
+  <summary>Click to expand</summary>
 
 When you first set up your headset, you must have been asked to download the Oculus app on a smartphone or tablet, and you must have synced your headset with that app.
 
@@ -57,8 +64,12 @@ Enable the `Developer Mode` checkbox.
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/developer_mode.png" width="600"/>
 </p>
+</details>
 
 ## Verifying That the Developer Mode Is Enabled and Enabling Hand Tracking
+
+<details>
+  <summary>Click to expand</summary>
 
 Put your headset on and go to the `Settings` menu.
 
@@ -89,8 +100,12 @@ Enable the `Hand Tracking` checkbox.
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/hand_tracking_menu.jpg" width="600"/>
 </p>
+</details>
 
 ## Installing the Oculus App on Your PC
+
+<details>
+  <summary>Click to expand</summary>
 
 Go to [this](https://www.meta.com/ca/quest/setup/?utm_source=www.meta.com&utm_medium=dollyredirect) website, download the Oculus App and install it.
 
@@ -105,12 +120,20 @@ Launch the Oculus App, go to the `Devices` tab and click on the `Add Headset` bu
 </p>
 
 Follow the steps until your headset has been added.
+</details>
 
 ## Installing the Meta Quest Developer Hub (MQDH) on Your PC
 
+<details>
+  <summary>Click to expand</summary>
+
 Go to [this](https://developer.oculus.com/documentation/unity/ts-odh/) website and follow the steps in the `Install MQDH` and `Connect Headset to MQDH` sections.
+</details>
 
 ## Installing Unity 2022.1.23f1
+
+<details>
+  <summary>Click to expand</summary>
 
 Download the Unity Hub application from [this](https://unity.com/download) website if you don't have it installed already.
 
@@ -137,8 +160,12 @@ Only select these modules and click the `Install` button.
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/unity_hub_modules.PNG" width="600"/>
 </p>
+</details>
 
 ## Opening the Unity Project and Verifying That It Can Be Built and Installed on Your Headset
+
+<details>
+  <summary>Click to expand</summary>
 
 After cloning this repo, go to the `Projects` tab in the Unity Hub application, click on the arrow next to the `Open` button, and then click on the `Add project from disk` button.
 
@@ -189,3 +216,4 @@ You will find the app there:
 <p align="center">
  <img src="https://github.com/Shopify/handy/blob/main/readme_images/launching_handy.jpg" width="600"/>
 </p>
+</details>
