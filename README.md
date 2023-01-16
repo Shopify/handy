@@ -18,6 +18,26 @@
 
 We developed this tool in order to streamline the process of capturing hand movements from Meta Quest headsets and bringing them into Blender for use in animations.
 
+## Examples of what you can do with handy
+
+- The hands in [this](https://twitter.com/StrangeNative/status/1613218237969494017?s=20) concept video were mocapped using handy!
+
+<p align="center">
+  <a href="">
+    <img src="https://github.com/Shopify/handy/blob/main/readme_images/concept_video.PNG" href="https://twitter.com/StrangeNative/status/1613218237969494017?s=20">
+  </a>
+</p>
+
+- The hands and face in [this](https://diegomacario.github.io/Hands-In-The-Web) live demo were also mocapped using handy!
+
+<p align="center">
+  <a href="">
+    <img src="https://github.com/Shopify/handy/blob/main/readme_images/geisha.png" href="https://diegomacario.github.io/Hands-In-The-Web">
+  </a>
+</p>
+
+The code behind that live demo is available [here](https://github.com/diegomacario/Hands-In-The-Web), in case you are interested in how mocap data can be played in the browser.
+
 ## Prerequisites
 
 * Unity 2022.1.23 or later
