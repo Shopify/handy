@@ -18,7 +18,7 @@
 
 We developed this tool in order to streamline the process of capturing hand movements from Meta Quest headsets and bringing them into Blender for use in animations.
 
-## Examples of What You Can Do With Handy
+## Examples of What You Can Do With This Tool
 
 - The hands in [this](https://twitter.com/StrangeNative/status/1613218237969494017?s=20) concept video were mocapped using handy!
 
