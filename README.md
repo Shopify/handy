@@ -23,7 +23,7 @@ We developed this tool in order to streamline the process of capturing hand move
 - The hands in [this](https://twitter.com/StrangeNative/status/1613218237969494017?s=20) concept video were mocapped using handy!
 
 <p align="center">
-  <a href="">
+  <a href="https://twitter.com/StrangeNative/status/1613218237969494017?s=20">
     <img src="https://github.com/Shopify/handy/blob/main/readme_images/concept_video.PNG" href="https://twitter.com/StrangeNative/status/1613218237969494017?s=20" width="600">
   </a>
 </p>
@@ -31,7 +31,7 @@ We developed this tool in order to streamline the process of capturing hand move
 - The hands and face in [this](https://diegomacario.github.io/Hands-In-The-Web) live demo were also mocapped using handy!
 
 <p align="center">
-  <a href="">
+  <a href="https://diegomacario.github.io/Hands-In-The-Web">
     <img src="https://github.com/Shopify/handy/blob/main/readme_images/geisha.png" href="https://diegomacario.github.io/Hands-In-The-Web" width="600">
   </a>
 </p>
